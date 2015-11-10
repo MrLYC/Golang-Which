@@ -9,6 +9,12 @@ import (
 	. "command"
 )
 
+const (
+	OKStatus       = iota
+	NotFoundStatus = iota
+	ErrorStatus    = iota
+)
+
 func main() {
 	argument := new(Argument)
 	argument.ParseArgs()
@@ -24,9 +30,9 @@ func main() {
 			}
 		}
 		if !existed {
-			syscall.Exit(1)
+			syscall.Exit(NotFoundStatus)
 		}
-		syscall.Exit(0)
+		syscall.Exit(OKStatus)
 	}
-	syscall.Exit(2)
+	syscall.Exit(ErrorStatus)
 }
