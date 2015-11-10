@@ -1,9 +1,12 @@
-// which
 package main
 
 import (
 	"fmt"
 	"syscall"
+)
+
+import (
+	. "command"
 )
 
 func main() {

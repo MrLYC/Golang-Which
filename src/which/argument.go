@@ -1,4 +1,3 @@
-// argument
 package main
 
 import (
